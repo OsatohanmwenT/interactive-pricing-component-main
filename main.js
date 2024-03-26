@@ -25,7 +25,7 @@ rangeInput.addEventListener("input", () => {
 
    const progress = (rangeInput.value / rangeInput.max) * 100
 
-   rangeInput.style.background = `linear-gradient(to right, #a5f3eb ${progress}%, 	#eaeefb ${progress}%)`
+   rangeInput.style.background = `linear-gradient(to right, #a5f3eb ${progress}%, #eaeefb ${progress}%)`
     
     if(toggleButton.classList.contains("active-toggle")){
         let discount = rangeInput.value  * 0.25
