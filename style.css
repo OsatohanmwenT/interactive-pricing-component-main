@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root{
+    --Soft-Cyan-FullSliderBar: hsl(174, 77%, 80%);
+    --Strong-Cyan-Slider-Backround: hsl(174, 86%, 45%);
+    --Light-Grayish-Red-Discount-Background: hsl(14, 92%, 95%);
+    --Light-Red-DiscountText: hsl(15, 100%, 70%);
+    --Pale-Blue-CTA-Text: hsl(226, 100%, 87%);
+    --White-Pricing-Component-Background: hsl(0, 0%, 100%);
+    --Very-Pale-Blue-Main-Background: hsl(230, 100%, 99%);
+    --Light-Grayish-Blue-Empty-Slider-Bar: hsl(224, 65%, 95%);
+    --Light-Grayish--Blue-Toggle-Background: hsl(223, 50%, 87%);
+    --Grayish-Blue-Text: hsl(225, 20%, 60%);
+    --Dark-Desaturated-Blue-Text-Background: hsl(227, 35%, 25%);
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Manrope", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background:
+      url('images/pattern-circles.svg') top 2rem center,
+      url('images/bg-pattern.svg') top center, /* Background image with specific positioning */ /* Background image with specific positioning */
+      var(--Very-Pale-Blue-Main-Background); /* Solid background color */
+    background-repeat: no-repeat;
+    display: grid;
+    place-content: center;
+}
+
+button{
+    background-color: var(--Dark-Desaturated-Blue-Text-Background);
+    border: none;
+    border-radius: 2rem;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--White-Pricing-Component-Background);
+    padding: 0.8rem 2.5rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.wrapper .head{
+    text-align: center;
+}
+
+.wrapper .head h1{
+    color: var(--Dark-Desaturated-Blue-Text-Background);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.wrapper .head p{
+    color: var(--Grayish-Blue-Text);
+    font: 600;
+}
+
+.container{
+    width: 36rem;
+    background-color: var(--White-Pricing-Component-Background);
+    padding-block: 2.5rem;
+    border-radius: 0.5rem;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-rows: 1fr auto;
+    box-shadow: var(--Light-Grayish--Blue-Toggle-Background) 4px 12px 20px 3px;
+}
+
+.container .top{
+    margin-inline: 3rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.container label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Grayish-Blue-Text);
+}
+
+.container label > span{
+    letter-spacing: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.container label div{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.container label div span{
+    color: var(--Dark-Desaturated-Blue-Text-Background);
+    font-size: 2.6rem;
+    font-weight: 800;
+}
+
+.container .toggle-price{
+    display: flex;
+    gap: 0.8rem;
+    justify-self: center;
+}
+
+.container .toggle-price .toggle-button.active-toggle{
+    background-color: var(--Soft-Cyan-FullSliderBar);
+}
+
+.container .toggle-price .toggle-button.active-toggle .toggle-button-circle{
+    transform: translateX(0.9rem);
+}
+
+.container .toggle-price .bill{
+    font-size: 0.8rem;
+    color: var(--Grayish-Blue-Text);
+    font-weight: 600;
+}
+
+.container .toggle-price .bill.yearly::after{
+    content: " 25% discount";
+    padding: 5px;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    color: var(--Light-Red-DiscountText);
+    background-color: var(--Light-Grayish-Red-Discount-Background);
+}
+
+.container .toggle-price .toggle-button{
+    background-color: var(--Light-Grayish--Blue-Toggle-Background);
+    width: 2.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .toggle-price .toggle-button .toggle-button-circle{
+    background-color: var(--White-Pricing-Component-Background);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.container .top input[type="range"]{
+    cursor: pointer;
+    appearance: none;
+    background-color: var(--Light-Grayish-Blue-Empty-Slider-Bar);
+    border-radius: 1rem;
+    height: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.container .top input[type="range"]::-webkit-slider-thumb{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    appearance: none;
+    background-color: var(--Soft-Cyan-FullSliderBar);
+    border-radius: 50%;
+}
+
+.container .top input[type="range"]::-webkit-slider-thumb:hover{
+    box-shadow: hsla(174, 76%, 80%, 0.603) 0px 10px 20px 2px
+}
+
+.container .top input[type="range"]::-webkit-slider-thumb:active{
+    background-color: var(--Strong-Cyan-Slider-Backround);
+    box-shadow: hsla(174, 86%, 45%, 0.623) 0px 10px 20px 2px
+}
+
+.container .bottom-info{
+    border-top: 1px solid var(--Light-Grayish--Blue-Toggle-Background);
+    padding-top: 2rem;
+    padding-inline: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--Grayish-Blue-Text);
+}
+
+.container .bottom-info .info{
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.container .bottom-info .info span{
+    font-size: 0.8rem;
+}
+
+@media(max-width:35rem){
+    .wrapper .head{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .wrapper .head h1{
+        font-size: 1.5rem;
+    }
+
+    .wrapper .head p{
+        font-size: 0.9rem;
+        width: 15rem;
+        align-self: center;
+    }
+
+    .container{
+        width: 20rem;
+    }
+
+    .container .top{
+        margin-inline: 1rem;
+        grid-template-areas: 
+        "view"
+        "input"
+        "price";
+    }
+
+    button{
+        font-size: 0.8rem;
+    }
+
+    .container .top label{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .toggle-price{
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .container .toggle-price .bill{
+        font-size: 0.7rem;
+    }
+
+    .container .toggle-price .bill.yearly::after{
+        content: "-25%";
+    }
+
+    .container label > span{
+        font-size: 0.8rem;
+        grid-area: view;
+    }
+
+    .container label div{
+        grid-area: price;
+    }
+
+    .container label div span{
+        font-size: 1.9rem;
+        
+    }
+
+    .container .top input[type="range"]::-webkit-slider-thumb{
+        width: 2.5rem;
+        height: 2.5rem;
+        grid-area: input;
+    }
+
+    .container .bottom-info{
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
