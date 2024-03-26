@@ -23,7 +23,7 @@ rangeInput.addEventListener("input", () => {
     value = rangeInput.value;
     rangeValue.innerHTML = `$${value}.00`
 
-   const progress = (rangeInput.value / rangeInput.max) * 100
+   const progress = ((rangeInput.value - rangeInput.min) / (rangeInput.max - rangeInput.min)) * 100
 
    rangeInput.style.background = `linear-gradient(to right, #a5f3eb ${progress}%, #eaeefb ${progress}%)`
     
